@@ -1,0 +1,13 @@
+2026-07-04 10:14:22 [INFO] Gateway: Routing request POST /api/v1/auth/login to AuthService.
+2026-07-04 10:14:23 [INFO] AuthService: Verifying user credentials for user_id: 9942.
+2026-07-04 10:14:23 [INFO] AuthService: Requesting profile confirmation from PostgreSQL_DB.
+2026-07-04 10:14:28 [ERROR] PostgreSQL_DB: Connection timeout. Max pool size of 20 connections reached. Available: 0.
+2026-07-04 10:14:28 [CRITICAL] AuthService: Failed to complete transaction. Internal dependency failure.
+Traceback (most recent call last):
+  File "/services/auth_service.py", line 42, in verify_login
+    db_cursor = database.connect_pool.get_connection()
+  File "/database/connection_pool.py", line 118, in get_connection
+    raise TimeoutError("Could not allocate socket connection to replica node within 5000ms")
+TimeoutError: Could not allocate socket connection to replica node within 5000ms
+2026-07-04 10:14:29 [WARN] Gateway: AuthService returned status code 500. Retrying transaction routing once...
+2026-07-04 10:14:34 [FATAL] Gateway: Service execution halted. System health state: CRITICAL.

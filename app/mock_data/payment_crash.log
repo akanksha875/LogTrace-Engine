@@ -1,0 +1,6 @@
+2026-07-04 14:22:01 [INFO] Gateway: Routing request to /api/checkout
+2026-07-04 14:22:02 [INFO] OrderService: Validating shopping cart items for User_8832
+2026-07-04 14:22:03 [INFO] OrderService: Forwarding payment intent payload to PaymentService
+2026-07-04 14:22:05 [WARNING] PaymentService: Retrying connection to Stripe_API endpoint...
+2026-07-04 14:22:08 [CRITICAL] PaymentService: java.lang.OutOfMemoryError: Java heap space. Service crashed unexpectedly.
+2026-07-04 14:22:08 [ERROR] Gateway: 502 Bad Gateway received from downstream dependencies.
